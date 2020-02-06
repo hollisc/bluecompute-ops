@@ -20,3 +20,10 @@ spec:
     name: web
     weight: 100
   wildcardPolicy: None
+status:
+  ingress:
+  - conditions:
+    host: web-bluecompute-dev.apps.devops.gse.rhosp3.csplab.local
+    routerCanonicalHostname: apps.devops.gse.rhosp3.csplab.local
+    routerName: default
+    wildcardPolicy: None
