@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
       - name: "web"
-        image: "hollisc/bluecompute-web:0.6.1"
+        image: "hollisc/bluecompute-web:0.6.0"
         imagePullPolicy: "Always"
         volumeMounts:
         - name: config-volume
