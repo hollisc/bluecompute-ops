@@ -1,0 +1,29 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    app: web
+    app.kubernetes.io/instance: dev-bluecompute-web
+    chart: web-0.6.0
+    heritage: Tiller
+    release: bluecompute
+    tier: frontend
+    version: v1
+  name: web
+spec:
+  host: web-bluecompute-dev.apps.devops.gse.rhosp3.csplab.local
+  port:
+    targetPort: http
+  subdomain: ""
+  to:
+    kind: Service
+    name: web
+    weight: 100
+  wildcardPolicy: None
+status:
+  ingress:
+  - conditions:
+    host: web-bluecompute-dev.apps.devops.gse.rhosp3.csplab.local
+    routerCanonicalHostname: apps.devops.gse.rhosp3.csplab.local
+    routerName: default
+    wildcardPolicy: None
