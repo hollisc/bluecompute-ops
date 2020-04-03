@@ -54,7 +54,7 @@ metadata:
     stack.appsody.dev/version: 0.2.5
     app: "web"
   name: web
-  namespace: oscar-workspace
+  namespace: dev
 spec:
   applicationImage: dev.local/web
   createKnativeService: false
