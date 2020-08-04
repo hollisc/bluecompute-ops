@@ -1,0 +1,31 @@
+apiVersion: app.ibm.com/v1alpha1
+kind: Deployable
+metadata:
+  name: bluecompute-web-dev-service-deployable
+spec:
+  template:
+    apiVersion: v1
+    kind: Service
+    metadata:
+      labels:
+        app: web
+        chart: web-0.6.0
+        heritage: Tiller
+        release: bluecompute
+        tier: frontend
+        version: v1
+      name: web
+    spec:
+      ports:
+      - name: http
+        port: 80
+        protocol: TCP
+        targetPort: 8000
+      selector:
+        app: web
+        chart: web-0.6.0
+        heritage: Tiller
+        release: bluecompute
+        tier: frontend
+        version: v1
+      type: ClusterIP
